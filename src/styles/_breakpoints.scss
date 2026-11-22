@@ -1,0 +1,9 @@
+$bp-laptop: 1336px;
+$bp-tablet: 900px;
+$bp-mobile: 480px;
+
+@mixin below($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}

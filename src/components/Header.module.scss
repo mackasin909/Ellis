@@ -1,0 +1,89 @@
+@use "../styles/breakpoints" as bp;
+
+.banner {
+  padding: 0.4rem var(--container-gutter);
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--color-on-dark);
+  background: var(--color-darker);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-line);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 4rem;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-heading);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+}
+
+.logoIcon {
+  color: var(--color-accent);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.links {
+  display: flex;
+  gap: 1.75rem;
+  font-size: var(--fs-label);
+
+  a {
+    text-decoration: none;
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.5rem;
+  padding: 0 1.125rem;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  color: var(--color-accent-contrast);
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
+  transition: filter var(--transition);
+
+  &:hover {
+    filter: var(--hover-filter);
+  }
+}
+
+@include bp.below(bp.$bp-tablet) {
+  .links {
+    display: none;
+  }
+}
+
+@include bp.below(bp.$bp-mobile) {
+  .cta {
+    padding: 0 0.875rem;
+  }
+}

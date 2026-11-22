@@ -1,0 +1,14 @@
+.inner {
+  align-items: center;
+}
+
+.title {
+  max-width: 30rem;
+  font-size: var(--fs-h2);
+}
+
+.lead {
+  max-width: 28rem;
+  margin-top: 1rem;
+  color: var(--color-on-dark-muted);
+}

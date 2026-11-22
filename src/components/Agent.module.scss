@@ -1,0 +1,71 @@
+.section {
+  border-block: 1px solid var(--color-line);
+}
+
+.inner {
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(1.75rem, 1.25rem + 1.5vw, 2.5rem) var(--card-padding);
+  text-align: center;
+  background: var(--color-tint);
+  border-radius: var(--radius-md);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 5.5rem;
+  height: 5.5rem;
+  font-family: var(--ff-heading);
+  font-size: 1.75rem;
+  font-weight: var(--fw-bold);
+  color: var(--color-accent-contrast);
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 1rem;
+  font-family: var(--ff-heading);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
+}
+
+.role {
+  margin-top: 0.25rem;
+  font-size: var(--fs-small);
+  color: var(--color-text-soft);
+}
+
+.brokerage {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+.bio {
+  margin-top: 1.25rem;
+  color: var(--color-text-soft);
+}
+
+.points {
+  display: grid;
+  gap: 0.625rem;
+  margin-top: 1.5rem;
+  font-size: var(--fs-label);
+  font-weight: var(--fw-medium);
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.check {
+  color: var(--color-accent);
+}

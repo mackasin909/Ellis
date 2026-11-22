@@ -1,0 +1,67 @@
+@use "./breakpoints" as bp;
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+.section {
+  padding-block: var(--section-offset);
+}
+.section--tint { background: var(--color-tint); }
+.section--surface { background: var(--color-surface); }
+.section--dark {
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--gap);
+  row-gap: var(--gap);
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    grid-column: span $i;
+  }
+}
+
+.col-full {
+  grid-column: 1 / -1;
+}
+
+// Планшет: 8 колонок. col-1…col-3 дают 2 карточки в ряд, остальное во всю ширину
+// (hero: текст и форма встают друг под другом)
+@include bp.below(bp.$bp-tablet) {
+  .grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      @if $i <= 3 {
+        grid-column: span 4;
+      } @else {
+        grid-column: span 8;
+      }
+    }
+  }
+}
+
+// Телефон: 4 колонки, все блоки во всю ширину
+@include bp.below(bp.$bp-mobile) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      grid-column: 1 / -1;
+    }
+  }
+}
